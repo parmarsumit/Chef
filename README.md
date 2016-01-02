@@ -44,7 +44,7 @@ cookbook_path "/root/chef-repo/cookbooks"
 Place the above lines in solo.rb
 
 Now we'll create config file for specifying our run-list of recipies to be applied on a machine.
-Create a new file config.json in chef-repo directory
+Create a new file config.json in chef-repo directory.
 ```text
 {
   "nginx":{
@@ -52,6 +52,7 @@ Create a new file config.json in chef-repo directory
   },
   "run_list": [ "recipe[nginx]" ]
 }
+Place the above content in config.json file
 ```
 
 # Installing nginx
