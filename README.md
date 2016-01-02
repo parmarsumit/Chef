@@ -34,3 +34,28 @@ git commit -m "Initial commit"
 cd ..
 knife cookbook site install apt
 ```
+
+### Create chef-solo config file and specifying run-list for chef-recipes
+Create a new file called solo.rb in chef-repo directory
+```text
+file_cache_path "/root/chef-solo"
+cookbook_path "/root/chef-repo/cookbooks"
+```
+Place the above lines in solo.rb
+
+Now we'll create config file for specifying our run-list of recipies to be applied on a machine.
+Create a new file config.json in chef-repo directory
+```text
+{
+  "nginx":{
+    "default_root": "/usr/share/nginx/html
+  },
+  "run_list": [ "recipe[nginx]" ]
+}
+```
+
+# Installing nginx
+```bash
+knife cookbook site install nginx
+chef-solo -c solo.rb -j config.json
+```
