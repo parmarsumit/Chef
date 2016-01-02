@@ -52,8 +52,8 @@ Create a new file config.json in chef-repo directory.
   },
   "run_list": [ "recipe[nginx]" ]
 }
-Place the above content in config.json file
 ```
+Place the above content in config.json file
 
 # Installing nginx
 ```bash
