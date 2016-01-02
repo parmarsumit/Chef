@@ -25,3 +25,12 @@ knife cookbook create firstcookbook
 ```text
 This cookbook will be created in the directory "/root/chef-repo/cookbooks"
 ```
+### Downloading cookbooks from chef supermarket
+```bash
+cd cookbooks
+git init
+git add --all
+git commit -m "Initial commit"
+cd ..
+knife cookbook site install apt
+```
