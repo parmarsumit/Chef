@@ -13,6 +13,7 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "centos7"
+  config.vm.box_url = "https://github.com/holms/vagrant-centos7-box/releases/download/7.1.1503.001/CentOS-7.1.1503-x86_64-netboot.box"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -26,8 +27,8 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-    config.vm.network "private_network", ip: "192.168.33.25"
-    config.vm.provision "file", source: "./knife.rb", destination: "/home/vagrant/.chef/knife.rb"
+ #   config.vm.network "private_network", ip: "192.168.33.25"
+#    config.vm.provision "file", source: "./knife.rb", destination: "/home/vagrant/.chef/knife.rb"
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
@@ -65,17 +66,16 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
-      rpm -ivh /vagrant/chefdk-0.10.0-1.el6.x86_64.rpm
+        rpm -ivh /vagrant/chefdk-0.10.0-1.el6.x86_64.rpm
 	rpm -ivh /vagrant/epel-release-6-8.noarch.rpm
 	yum update -y
+        yum install -y tree vim
 	yum -y install docker-io
 	service docker start
 	chkconfig docker on
 	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 	curl -sSL https://get.rvm.io | bash -s stable --ruby
 	source /etc/profile.d/rvm.sh
-	rvm install 2.2.4
-	rvm use 2.2.4
-        gem install bundle
+        gem install bundler -v 1.11.2
    SHELL
 end
