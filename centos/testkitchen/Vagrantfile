@@ -67,7 +67,7 @@ Vagrant.configure(2) do |config|
   # documentation for more information about their specific syntax and use.
    config.vm.provision "shell", inline: <<-SHELL
         rpm -ivh /vagrant/chefdk-0.10.0-1.el6.x86_64.rpm
-	rpm -ivh /vagrant/epel-release-6-8.noarch.rpm
+	rpm -ivh /vagrant/epel-release-7-5.noarch.rpm
 	yum update -y
         yum install -y tree vim
 	yum -y install docker-io
