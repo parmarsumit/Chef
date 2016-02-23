@@ -1,7 +1,0 @@
-{
-  "id"        : "ejabberd",
-  "comment"   : "ejabberd user",
-  "home"      : "/home/ejabberd",
-  "groups"    : ["ejabberd"],
-  "ssh_keys"  : ["sandeep"]
-}
