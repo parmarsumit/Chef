@@ -3,5 +3,5 @@ machine 'saurabh' do
 end
 
 machine 'sandeep' do
-	tag 'sandy'
+	tag 'sandeep'
 end
