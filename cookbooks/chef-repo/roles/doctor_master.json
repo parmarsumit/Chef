@@ -1,0 +1,25 @@
+{
+  "name": "doctor_master",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "mongodb": {
+      "config": {
+        "replSet": "sigma-mongo-rs"
+      },
+      "cluster_name": "sigma1.lybrate.com"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt::default]",
+    "recipe[mongodb::10gen_repo]",
+    "recipe[mongodb::replicaset]"
+  ],
+  "env_run_lists": {
+
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "phoenix-tomcat",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[lybrate::phoenix_tomcat]"
+  ],
+  "env_run_lists": {
+
+  }
+}

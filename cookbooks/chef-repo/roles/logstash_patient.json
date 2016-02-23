@@ -1,0 +1,20 @@
+{
+  "name": "logstash_patient",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "lybrate": {
+      "app_type": "patient"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[lybrate::logstash_agent]"
+  ],
+  "env_run_lists": {
+
+  }
+}

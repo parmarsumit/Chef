@@ -1,0 +1,24 @@
+{
+  "name": "doctor_repl1",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "mongodb": {
+      "config": {
+        "replSet": "sigma-mongo-rs"
+      },
+      "cluster_name": "sigma2.lybrate.com"
+    }
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[mongodb::10gen_repo]",
+    "recipe[mongodb::replicaset]"
+  ],
+  "env_run_lists": {
+
+  }
+}
